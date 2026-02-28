@@ -68,3 +68,9 @@ func _on_checkpoint_body_entered(body: Node2D) -> void:
 func _on_mantle_body_entered(body: Node2D) -> void:
 	$Camera2D/AnimatedSprite2D.play("Mantle")
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	$Camera2D/AnimatedSprite2D.play("White")
+	$Camera2D/AnimatedSprite2D.z_index = 1
+	$Camera2D/AnimatedSprite2D/Label.visible = true
