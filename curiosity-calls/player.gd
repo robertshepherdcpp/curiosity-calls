@@ -5,6 +5,7 @@ const SPEED = 900.0
 const JUMP_VELOCITY = -900.0
 var checkpoint = Vector2(90,50)
 var time = 0
+var dir = 'left'
 var needs_release = false;
 
 func _physics_process(delta: float) -> void:
@@ -13,9 +14,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("left"):
 		$Sprite2D.flip_h = true
 		$Camera2D.offset.y = 0
+		dir = 'left'
 	if Input.is_action_just_pressed("right"):
 		$Sprite2D.flip_h = false
 		$Camera2D.offset.y = 0
+		dir = 'right'
+	if Input.is_action_just_pressed("dash"):
+		if dir == 'right':
+			velocity.x += 900
+		elif dir == 'left':
+			velocity.x -= 300
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
