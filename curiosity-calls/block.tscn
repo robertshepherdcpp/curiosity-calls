@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjfdvaw2bm0dg" path="res://spike.tscn" id="2_xfwl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfwl5"]
-size = Vector2(129, 86)
+size = Vector2(129, 106)
 
 [node name="Block" type="RigidBody2D" unique_id=661742320]
 script = ExtResource("1_5d32t")

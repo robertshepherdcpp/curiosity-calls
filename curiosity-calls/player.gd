@@ -55,3 +55,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	position = checkpoint
+
+
+func _on_checkpoint_body_entered(body: Node2D) -> void:
+	checkpoint = body.position
