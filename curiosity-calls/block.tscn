@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2qv8ixpjvo2"]
 
 [ext_resource type="Texture2D" uid="uid://dn5omxumknmn8" path="res://Block.png" id="1_im0tn"]
+[ext_resource type="PackedScene" uid="uid://cjfdvaw2bm0dg" path="res://spike.tscn" id="2_xfwl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfwl5"]
 size = Vector2(129, 86)
@@ -13,3 +14,13 @@ texture = ExtResource("1_im0tn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=771861486]
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_xfwl5")
+
+[node name="Spike" parent="." unique_id=1921684912 instance=ExtResource("2_xfwl5")]
+position = Vector2(81, -1)
+rotation = 1.578665
+scale = Vector2(0.6, 0.6)
+
+[node name="Spike2" parent="." unique_id=379553594 instance=ExtResource("2_xfwl5")]
+position = Vector2(-84, 1)
+rotation = -1.5707964
+scale = Vector2(0.6, 0.6)

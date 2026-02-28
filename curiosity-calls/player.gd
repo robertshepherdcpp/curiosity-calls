@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 900.0
 const JUMP_VELOCITY = -900.0
-
+var checkpoint = Vector2(90,50)
 var time = 0
 var needs_release = false;
 
@@ -54,4 +54,4 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+	position = checkpoint
