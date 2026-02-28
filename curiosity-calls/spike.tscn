@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cjfdvaw2bm0dg"]
 
+[ext_resource type="Script" uid="uid://rawfqi3t6rro" path="res://spike.gd" id="1_7k7bx"]
 [ext_resource type="Texture2D" uid="uid://ibekxxh8nk0w" path="res://spike.png" id="1_8ryga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k7bx"]
 size = Vector2(111, 42)
 
 [node name="Spike" type="RigidBody2D" unique_id=1921684912]
+script = ExtResource("1_7k7bx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242850769]
 texture = ExtResource("1_8ryga")

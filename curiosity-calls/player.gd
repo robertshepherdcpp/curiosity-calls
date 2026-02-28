@@ -8,10 +8,14 @@ var time = 0
 var needs_release = false;
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("down"):
+		$Camera2D.offset.y = 250
 	if Input.is_action_just_pressed("left"):
 		$Sprite2D.flip_h = true
+		$Camera2D.offset.y = 0
 	if Input.is_action_just_pressed("right"):
 		$Sprite2D.flip_h = false
+		$Camera2D.offset.y = 0
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
