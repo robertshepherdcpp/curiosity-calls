@@ -32,6 +32,8 @@ size = Vector2(0, 899)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(13, 896)
 
+[sub_resource type="TileSet" id="TileSet_1bvp3"]
+
 [node name="Node2D" type="Node2D" unique_id=1797323550]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1585158587]
@@ -66,3 +68,6 @@ shape = SubResource("RectangleShape2D_h2yge")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1277726732]
 position = Vector2(146.5, 310)
 shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1370951343]
+tile_set = SubResource("TileSet_1bvp3")
