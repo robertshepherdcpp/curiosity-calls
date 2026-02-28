@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-
+var lifespan = 20
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,4 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.x += 200*delta
+	lifespan -= delta
+	if lifespan <= 0:
+		queue_free()
 	
