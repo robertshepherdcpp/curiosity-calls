@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://ix34w2rcebxs" path="res://button.gd" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://lqxpm035mx44" path="res://button_off.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://dlnwta6c48ely" path="res://button_on.png" id="6_5vw27"]
-[ext_resource type="PackedScene" uid="uid://b7iv8ig4ardd6" path="res://KillZone.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" path="res://KillZone.tscn" id="7_272bh"]
 
 [sub_resource type="GDScript" id="GDScript_5vw27"]
 script/source = "extends Node2D
@@ -110,6 +110,9 @@ size = Vector2(434, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
 size = Vector2(314, 230)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]
+size = Vector2(390, 332)
+
 [node name="Node2D" type="Node2D" unique_id=1797323550]
 script = SubResource("GDScript_5vw27")
 
@@ -135,7 +138,8 @@ position_smoothing_enabled = true
 z_index = -2
 scale = Vector2(7, 5)
 sprite_frames = SubResource("SpriteFrames_efxa6")
-animation = &"Mantle"
+animation = &"Cave"
+autoplay = "Cave"
 
 [node name="hurtbox" type="Area2D" parent="Player" unique_id=1622954873]
 collision_layer = 2
@@ -203,6 +207,29 @@ position = Vector2(2154, 3111)
 position = Vector2(-17, 36)
 shape = SubResource("RectangleShape2D_4c57u")
 
+[node name="Checkpoint2" type="Area2D" parent="." unique_id=529527784]
+position = Vector2(3587, 3956)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2" unique_id=1938424503]
+position = Vector2(-17, 36)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="Checkpoint3" type="Area2D" parent="." unique_id=587986554]
+position = Vector2(7490, 8729)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3" unique_id=1206869980]
+position = Vector2(-17, 36)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="Mantle" type="Area2D" parent="." unique_id=420122246]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mantle" unique_id=1743653598]
+position = Vector2(7790, 5982)
+shape = SubResource("RectangleShape2D_efxa6")
+
 [connection signal="area_entered" from="Player/hurtbox" to="Player" method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
 [connection signal="body_entered" from="Checkpoint" to="Player" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoint2" to="Player" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoint3" to="Player" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Mantle" to="Player" method="_on_mantle_body_entered"]

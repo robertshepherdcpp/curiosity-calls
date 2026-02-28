@@ -59,3 +59,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 
 func _on_checkpoint_body_entered(body: Node2D) -> void:
 	checkpoint = body.position
+
+
+func _on_mantle_body_entered(body: Node2D) -> void:
+	$Camera2D/AnimatedSprite2D.play("Mantle")
+	
