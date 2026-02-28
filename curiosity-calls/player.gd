@@ -19,11 +19,7 @@ func _physics_process(delta: float) -> void:
 		$Sprite2D.flip_h = false
 		$Camera2D.offset.y = 0
 		dir = 'right'
-	if Input.is_action_just_pressed("dash"):
-		if dir == 'right':
-			velocity.x += 900
-		elif dir == 'left':
-			velocity.x -= 300
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
