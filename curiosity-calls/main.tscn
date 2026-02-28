@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dlnwta6c48ely" path="res://button_on.png" id="6_5vw27"]
 [ext_resource type="PackedScene" path="res://KillZone.tscn" id="7_272bh"]
 [ext_resource type="Script" uid="uid://cm2p1cs356ye4" path="res://fireball_spawn.gd" id="11_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cgolpf2q6hlju" path="res://red.png" id="13_w48qg"]
+[ext_resource type="Script" uid="uid://cjlgahcxfu3u1" path="res://enemy.gd" id="14_vivmo"]
 
 [sub_resource type="GDScript" id="GDScript_5vw27"]
 script/source = "extends Node2D
@@ -129,6 +131,8 @@ size = Vector2(390, 332)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycdy4"]
 size = Vector2(276.4141, 64.612305)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cqfq"]
+
 [node name="Node2D" type="Node2D" unique_id=1797323550]
 script = SubResource("GDScript_5vw27")
 
@@ -165,8 +169,7 @@ offset_right = 175.14285
 offset_bottom = 8.0
 text = "We made it?
 Is this the core?
-It's a lot quieter 
-than expected..."
+"
 label_settings = SubResource("LabelSettings_dg77c")
 
 [node name="hurtbox" type="Area2D" parent="Player" unique_id=1622954873]
@@ -265,6 +268,18 @@ script = ExtResource("11_efxa6")
 position = Vector2(-1976.4999, 10651.043)
 scale = Vector2(2.3551621, 3.808673)
 shape = SubResource("RectangleShape2D_ycdy4")
+
+[node name="Enemy" type="Sprite2D" parent="." unique_id=1893076862]
+position = Vector2(6458, 4051)
+texture = ExtResource("13_w48qg")
+script = ExtResource("14_vivmo")
+
+[node name="Area2D" type="Area2D" parent="Enemy" unique_id=495515957]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D" unique_id=1296311755]
+shape = SubResource("RectangleShape2D_2cqfq")
 
 [connection signal="area_entered" from="Player/hurtbox" to="Player" method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
