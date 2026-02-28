@@ -87,6 +87,9 @@ size = Vector2(9151, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
 size = Vector2(434, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
+size = Vector2(314, 230)
+
 [node name="Node2D" type="Node2D" unique_id=1797323550]
 script = SubResource("GDScript_5vw27")
 
@@ -172,5 +175,13 @@ shape = SubResource("RectangleShape2D_5vw27")
 position = Vector2(438, -1788)
 shape = SubResource("RectangleShape2D_272bh")
 
+[node name="Checkpoint" type="Area2D" parent="." unique_id=122617911]
+position = Vector2(2154, 3111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" unique_id=96926783]
+position = Vector2(-17, 36)
+shape = SubResource("RectangleShape2D_4c57u")
+
 [connection signal="area_entered" from="Player/hurtbox" to="Player" method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint" to="Player" method="_on_checkpoint_body_entered"]
