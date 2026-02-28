@@ -118,7 +118,7 @@ size = Vector2(390, 332)
 script = SubResource("GDScript_5vw27")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1585158587]
-position = Vector2(-251, -8)
+position = Vector2(39, -469)
 script = ExtResource("1_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1069591806]
@@ -229,7 +229,7 @@ position = Vector2(7790, 5982)
 shape = SubResource("RectangleShape2D_efxa6")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=858725270]
-position = Vector2(-1445, 8235)
+position = Vector2(-1475, 8780)
 script = ExtResource("11_efxa6")
 
 [connection signal="area_entered" from="Player/hurtbox" to="Player" method="_on_hurtbox_area_entered"]

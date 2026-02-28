@@ -9,7 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	cd += delta
-	if cd > 5:
+	if cd > 3:
 		var f = fire.instantiate()
 		add_child(f)
 		cd = 0
