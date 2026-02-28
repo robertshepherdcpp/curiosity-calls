@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d2qv8ixpjvo2"]
 
+[ext_resource type="Script" uid="uid://dwbkn3s6kqkq6" path="res://block.gd" id="1_5d32t"]
 [ext_resource type="Texture2D" uid="uid://dn5omxumknmn8" path="res://Block.png" id="1_im0tn"]
 [ext_resource type="PackedScene" uid="uid://cjfdvaw2bm0dg" path="res://spike.tscn" id="2_xfwl5"]
 
@@ -7,6 +8,7 @@
 size = Vector2(129, 86)
 
 [node name="Block" type="RigidBody2D" unique_id=661742320]
+script = ExtResource("1_5d32t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1692054185]
 texture = ExtResource("1_im0tn")
