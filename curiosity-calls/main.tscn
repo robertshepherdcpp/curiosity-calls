@@ -7,7 +7,23 @@
 [ext_resource type="Script" uid="uid://ix34w2rcebxs" path="res://button.gd" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://lqxpm035mx44" path="res://button_off.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://dlnwta6c48ely" path="res://button_on.png" id="6_5vw27"]
-[ext_resource type="PackedScene" uid="uid://b7iv8ig4ardd6" path="res://KillZone.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" path="res://KillZone.tscn" id="7_272bh"]
+
+[sub_resource type="GDScript" id="GDScript_5vw27"]
+script/source = "extends Node2D
+
+var block = preload('res://block.tscn')
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var b = block.instantiate()
+	add_child(b)
+	b.startpos(4070,4125)
+	b.movement(0,1500)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(25.999939, 131)
@@ -71,6 +87,7 @@ size = Vector2(9151, 20)
 size = Vector2(434, 20)
 
 [node name="Node2D" type="Node2D" unique_id=1797323550]
+script = SubResource("GDScript_5vw27")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1585158587]
 position = Vector2(-251, -8)
@@ -89,6 +106,8 @@ shape = SubResource("RectangleShape2D_0xm2m")
 position = Vector2(1056, 243)
 zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D" unique_id=16393334]
 
 [node name="hurtbox" type="Area2D" parent="Player" unique_id=1622954873]
 collision_layer = 2

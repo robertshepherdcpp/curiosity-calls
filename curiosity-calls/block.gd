@@ -16,9 +16,10 @@ func _process(delta: float) -> void:
 		if position.x > start_pos.x + right:
 			dir = 'left'
 	if dir == 'left':
-		position.x -= 100 * delta
+		position.x -= 200 * delta
 		if position.x < start_pos.x + left:
 			dir = 'right'
+	position.y = start_pos.y
 func movement(l,r):
 	left = l
 	right = r
