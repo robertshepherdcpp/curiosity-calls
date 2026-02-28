@@ -1,5 +1,42 @@
 [gd_scene format=3 uid="uid://bnx0adn6q37xn"]
 
+[ext_resource type="Texture2D" uid="uid://br7wafhyvwvnm" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://8l7svd517p8n" path="res://blank_sprite.png" id="2_0xm2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(1159, 645)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
+texture = ExtResource("2_0xm2m")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_h2yge"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_h2yge")
+
 [node name="Node2D" type="Node2D" unique_id=1797323550]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1585158587]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1069591806]
+position = Vector2(145.49997, 81.37499)
+scale = Vector2(2.4296882, 1.7128906)
+texture = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=338957916]
+position = Vector2(578, 323)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=746992067]
+tile_set = SubResource("TileSet_h2yge")
