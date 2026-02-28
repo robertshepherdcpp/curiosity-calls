@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b1yesva4w74fc" path="res://player.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://8l7svd517p8n" path="res://blank_sprite.png" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://blib1ktybklsf" path="res://player.png" id="2_h2yge"]
+[ext_resource type="AudioStream" uid="uid://d3fx2y4unvaln" path="res://curious descent.mp3" id="3_272bh"]
 [ext_resource type="Script" uid="uid://ix34w2rcebxs" path="res://button.gd" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://lqxpm035mx44" path="res://button_off.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://dlnwta6c48ely" path="res://button_on.png" id="6_5vw27"]
@@ -89,6 +90,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/hurtbox" unique_id=1468044030]
 position = Vector2(1061, 244.5)
 shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" unique_id=1476209255]
+stream = ExtResource("3_272bh")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=746992067]
 position = Vector2(0, -1)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3fx2y4unvaln"
+path="res://.godot/imported/curious descent.mp3-2c90a9995dbfdc04ab62871b8391a4a5.mp3str"
+
+[deps]
+
+source_file="res://curious descent.mp3"
+dest_files=["res://.godot/imported/curious descent.mp3-2c90a9995dbfdc04ab62871b8391a4a5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
