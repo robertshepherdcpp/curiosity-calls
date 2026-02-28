@@ -6,7 +6,8 @@ var dir = 'left'
 var start_pos = Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 
-
+func _ready() -> void:
+	print('a')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -16,7 +17,7 @@ func _process(delta: float) -> void:
 			dir = 'left'
 	if dir == 'left':
 		position.x -= 100 * delta
-		if position.x > start_pos.x + left:
+		if position.x < start_pos.x + left:
 			dir = 'right'
 func movement(l,r):
 	left = l
@@ -24,3 +25,4 @@ func movement(l,r):
 func startpos(a,b):
 	start_pos.x = a
 	start_pos.y = b
+	position = Vector2(a,b)
