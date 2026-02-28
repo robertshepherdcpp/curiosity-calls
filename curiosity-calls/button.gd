@@ -15,4 +15,5 @@ func _on_body_entered(body: Node2D) -> void:
 	$AnimatedSprite2D.play("on")
 	var b = block.instantiate()
 	get_parent().add_child(b)
-	b.startpos(1000,1500)
+	b.startpos(1000,3300)
+	b.movement(100,1000)
